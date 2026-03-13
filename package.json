@@ -10,7 +10,13 @@
         "appId": "com.shinezzl.android.gp.pepk.tool",
         "mac": {
             "target": "dmg"
-        }
+        },
+        "extraResources": [
+            {
+                "from": "pepk/pepk.jar",
+                "to": "pepk/pepk.jar"
+            }
+        ]
     },
     "dependencies": {
         "axios": "^1.6.0"
