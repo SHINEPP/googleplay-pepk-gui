@@ -1,5 +1,7 @@
 const { exec } = require("child_process")
 const { app } = require("electron")
+const path = require("path");
+
 
 exports.run = (event, args) => {
     console.log("args = ", args)
