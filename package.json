@@ -16,6 +16,18 @@
                 "from": "pepk/pepk.jar",
                 "to": "pepk/pepk.jar"
             }
+        ],
+        "electronLanguages": [
+            "en-US"
+        ],
+        "asar": true,
+        "npmRebuild": false,
+        "files": [
+            "!**/*.md",
+            "!**/test",
+            "!**/tests",
+            "!**/example",
+            "!**/*.map"
         ]
     },
     "dependencies": {
