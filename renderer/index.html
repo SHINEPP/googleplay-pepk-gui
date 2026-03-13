@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Google Play Signing Toolkit</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f3f3f3;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .row {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3367d6;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .logs {
+            margin-top: 20px;
+            background: white;
+            color: black;
+            padding: 10px;
+            height: 180px;
+            overflow: auto;
+            font-family: monospace;
+            font-size: 12px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+
+        .path {
+            font-size: 12px;
+            color: #666;
+            margin-top: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Google Play Signing Toolkit</h1>
+
+        <div class="row">
+
+            <label>Keystore</label>
+
+            <button id="selectKeystore">Select Keystore File</button>
+
+            <div id="keystorePath" class="path"></div>
+
+        </div>
+
+        <div class="row">
+
+            <label>Alias</label>
+            
+            <input id="alias" type="text">
+
+        </div>
+
+        <div class="row">
+
+            <label>Keystore Password</label>
+
+            <input id="storepass" type="password">
+
+        </div>
+
+        <div class="row">
+
+            <label>Key Password</label>
+
+            <input id="keypass" type="password">
+
+        </div>
+
+        <div class="row">
+
+            <label>Encryption Key (.pem)</label>
+
+            <button id="selectPem">Select PEM File</button>
+
+            <div id="pemPath" class="path"></div>
+
+        </div>
+
+        <div class="row">
+
+            <label>Output Folder</label>
+
+            <button id="selectFolder">Select Output Folder</button>
+
+            <div id="folderPath" class="path"></div>
+
+        </div>
+
+        <div class="row">
+
+            <button id="generateBtn">Generate output.zip</button>
+
+        </div>
+
+        <div class="logs" id="logs"></div>
+
+    </div>
+
+    <script src="ui.js"></script>
+
+</body>
+
+</html>
