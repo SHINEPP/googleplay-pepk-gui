@@ -11,7 +11,7 @@ exports.run = (event, args) => {
         if (app.isPackaged) {
             jarPath = path.join(process.resourcesPath, "pepk/pepk.jar");
         } else {
-            jarPath = path.join(__dirname, "pepk/pepk.jar");
+            jarPath = path.join(__dirname, "../pepk/pepk.jar");
         }
 
         const cmd = `
@@ -29,7 +29,7 @@ java -jar ${jarPath} \
 
         exec(cmd, (err, stdout, stderr) => {
             if (err) reject(stderr)
-            else resolve("output.zip generated")
+            else resolve(`${args.outputDir}/output.zip generated`)
         })
 
     })

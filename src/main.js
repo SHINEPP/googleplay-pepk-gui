@@ -14,7 +14,7 @@ function createWindow() {
         }
     })
 
-    win.loadFile("renderer/index.html")
+    win.loadFile("src/renderer/index.html")
 
     // 调试用
     // win.webContents.openDevTools()
