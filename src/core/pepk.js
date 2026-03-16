@@ -1,9 +1,9 @@
-const { exec } = require("child_process")
-const { app } = require("electron")
-const path = require("path");
+import { exec } from "child_process"
+import { app } from "electron"
+import path from "path"
 
 
-exports.run = (event, args) => {
+const run = (event, args) => {
     console.log("args = ", args)
 
     return new Promise((resolve, reject) => {
@@ -34,3 +34,5 @@ java -jar ${jarPath} \
 
     })
 }
+
+export { run }

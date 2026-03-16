@@ -1,6 +1,7 @@
-const { execSync } = require("child_process")
+import { execSync } from "child_process"
 
-exports.check = () => {
+
+const check = () => {
     try {
         execSync("java -version")
 
@@ -9,3 +10,5 @@ exports.check = () => {
         throw "Java not installed"
     }
 }
+
+export { check }

@@ -1,8 +1,14 @@
-const { app, BrowserWindow, ipcMain, dialog } = require("electron")
-const path = require("path")
+import { app, BrowserWindow, dialog, ipcMain } from "electron"
+import path from "path"
 
-const java = require("./core/java")
-const pepk = require("./core/pepk")
+import * as java from "./core/java.js"
+import * as pepk from "./core/pepk.js"
+
+import { dirname } from "path"
+import { fileURLToPath } from "url"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 function createWindow() {
 
@@ -10,14 +16,17 @@ function createWindow() {
         width: 520,
         height: 820,
         webPreferences: {
-            preload: path.join(__dirname, "preload.js")
+            preload: path.join(__dirname, "preload.cjs"),
+            contextIsolation: true,
+            nodeIntegration: false,
+            sandbox: false  // ✅ 添加这一行，允许 preload 使用 require
         }
     })
 
     win.loadFile("src/renderer/index.html")
 
     // 调试用
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools()
 }
 
 app.whenReady().then(createWindow)
